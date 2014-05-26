@@ -1,6 +1,6 @@
 {
   "name": "mincss",
-  "description": "Minify CSS. That's all.",
+  "description": "Minify CSS with Source Map support",
   "version": "0.3.0",
   "homepage": "https://github.com/sstur/mincss",
   "author": "sstur",

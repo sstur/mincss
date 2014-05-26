@@ -1,9 +1,10 @@
-mincss
+MinCSS
 ======
 
-Minify CSS. That's all.
+Minify CSS with Source Map support.
 
-Written with [PostCSS][1].
+Forked from [CSSWring][1].
+Written with [PostCSS][2].
 
 
 INSTALLATION
@@ -15,20 +16,15 @@ INSTALLATION
 QUICK USAGE
 -----------
 
-    #!/usr/bin/env node
-    
-    'use strict';
-    
     var fs = require('fs');
     var mincss = require('mincss');
     
-    var css = fs.readFileSync('test.css', {
-      encoding: 'utf8'
-    });
+    var css = fs.readFileSync('test.css', 'utf8');
     fs.writeFileSync('test.min.css', mincss.minify(css).css);
 
-If you want to preserve some CSS hacks, set `preserveHacks` property of
-this module to `true`.
+You can pass in options as second parameter to `mincss.minify()`. To preserve
+"doc block" style comments (`/*! ... */`), set `preserveComments` option to
+`true`. Likewise, to preserve some CSS hacks, set `preserveHacks` option.
 
 
 CLI USAGE
@@ -39,15 +35,16 @@ This package also installs a command line interface.
     $ mincss --help
     Usage:
       mincss [options] [INPUT] [OUTPUT]
-    
+
     Description:
-      Minify CSS. That's all.
-    
+      Minify CSS with Source Map support.
+
     Options:
-          --sourcemap       Create source map file.
-          --preserve-hacks  Preserve some CSS hacks.
-      -h, --help            Show this message.
-      -v, --version         Print version information.
+          --sourcemap          Create source map file.
+          --preserve-comments  Preserve "doc block" comments.
+          --preserve-hacks     Preserve some CSS hacks.
+      -h, --help               Show this message.
+      -v, --version            Print version information.
 
 
 LICENSE
@@ -56,4 +53,5 @@ LICENSE
 MIT
 
 
-[1]: https://github.com/ai/postcss
+[1]: https://github.com/hail2u/node-csswring
+[2]: https://github.com/ai/postcss
