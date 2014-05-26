@@ -1,7 +1,7 @@
-CSSWring
-========
+mincss
+======
 
-Minify CSS file. That's only.
+Minify CSS. That's all.
 
 Written with [PostCSS][1].
 
@@ -9,7 +9,7 @@ Written with [PostCSS][1].
 INSTALLATION
 ------------
 
-    $ npm install csswring
+    $ npm install mincss
 
 
 QUICK USAGE
@@ -20,12 +20,12 @@ QUICK USAGE
     'use strict';
     
     var fs = require('fs');
-    var csswring = require('csswring');
+    var mincss = require('mincss');
     
     var css = fs.readFileSync('test.css', {
       encoding: 'utf8'
     });
-    fs.writeFileSync('test.min.css', csswring.wring(css).css);
+    fs.writeFileSync('test.min.css', mincss.minify(css).css);
 
 If you want to preserve some CSS hacks, set `preserveHacks` property of
 this module to `true`.
@@ -36,12 +36,12 @@ CLI USAGE
 
 This package also installs a command line interface.
 
-    $ node ./node_modules/.bin/csswring --help
+    $ mincss --help
     Usage:
-      csswring [options] [INPUT] [OUTPUT]
+      mincss [options] [INPUT] [OUTPUT]
     
     Description:
-      Minify CSS file. That's only.
+      Minify CSS. That's all.
     
     Options:
           --sourcemap       Create source map file.
@@ -53,7 +53,7 @@ This package also installs a command line interface.
 LICENSE
 -------
 
-MIT: http://hail2u.mit-license.org/2014
+MIT
 
 
 [1]: https://github.com/ai/postcss

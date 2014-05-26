@@ -1,26 +1,17 @@
 {
-  "name": "csswring",
-  "description": "Minify CSS file. That's only.",
+  "name": "mincss",
+  "description": "Minify CSS. That's all.",
   "version": "0.2.0",
-  "homepage": "https://github.com/hail2u/node-csswring",
-  "author": {
-    "name": "Kyo Nagashima",
-    "email": "kyo@hail2u.net",
-    "url": "http://hail2u.net/"
-  },
+  "homepage": "https://github.com/sstur/mincss",
+  "author": "sstur",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hail2u/node-csswring.git"
+    "url": "https://github.com/sstur/mincss.git"
   },
   "bugs": {
-    "url": "https://github.com/hail2u/node-csswring/issues"
+    "url": "https://github.com/sstur/mincss/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://hail2u.mit-license.org/2014"
-    }
-  ],
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "test": "nodeunit test"
@@ -32,7 +23,8 @@
     "css",
     "minifier",
     "minify",
-    "postcss"
+    "postcss",
+    "csswring"
   ],
   "dependencies": {
     "postcss": "~0.3.2",
@@ -40,6 +32,6 @@
     "minimist": "0.0.8"
   },
   "bin": {
-    "csswring": "./bin/csswring"
+    "mincss": "./bin/mincss"
   }
 }

@@ -1,1 +1,1 @@
-module.exports = require('./lib/csswring');
+module.exports = require('./lib/mincss');

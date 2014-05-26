@@ -5,7 +5,7 @@ var fs = require('fs');
 var path = require('path');
 var postcss = require('postcss');
 
-var csswring = require('../index');
+var mincss = require('../index');
 
 var dirFixtures = path.join(__dirname, 'fixtures');
 var dirExpected = path.join(__dirname, 'expected');
@@ -28,26 +28,26 @@ exports.testPublicInterfaces = function (test) {
 
   input = '.foo{color:black}';
   expected = postcss.parse(input);
-  test.strictEqual(csswring.wring(input).css, expected.toString());
+  test.strictEqual(mincss.minify(input).css, expected.toString());
 
   opts.map = true;
   test.strictEqual(
-    csswring.wring(input, opts).map,
+    mincss.minify(input, opts).map,
     expected.toResult(opts).map
   );
 
   test.strictEqual(
-    postcss().use(csswring.processor).process(input).css,
+    postcss().use(mincss.processor).process(input).css,
     expected.toString()
   );
 
-  csswring.preserveHacks = true;
+  mincss.preserveHacks = true;
   var testCase = 'preserve-hacks';
   input = loadInput(testCase);
   expected = loadExpected(testCase);
-  test.strictEqual(csswring.wring(input).css, expected);
+  test.strictEqual(mincss.minify(input).css, expected);
 
-  csswring.preserveHacks = false;
+  mincss.preserveHacks = false;
 
   test.done();
 };
@@ -68,7 +68,7 @@ exports.testRealCSS = function (test) {
     var testCase = testCases[i];
     input = loadInput(testCase);
     expected = loadExpected(testCase);
-    test.strictEqual(csswring.wring(input).css, expected);
+    test.strictEqual(mincss.minify(input).css, expected);
   }
 
   test.done();
