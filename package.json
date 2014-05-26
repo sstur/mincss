@@ -1,7 +1,7 @@
 {
   "name": "mincss",
   "description": "Minify CSS. That's all.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/sstur/mincss",
   "author": "sstur",
   "repository": {
